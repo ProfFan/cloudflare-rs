@@ -20,7 +20,7 @@ pub struct Plan {
 #[derive(Debug, Deserialize)]
 pub struct Zone {
     pub id: String,
-    pub development_mode: u32,
+    pub development_mode: i32,
     pub original_name_servers: Option<Vec<String>>,
     pub original_registrar: Option<String>,
     pub original_dnshost: Option<String>,
