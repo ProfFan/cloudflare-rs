@@ -290,6 +290,17 @@ pub fn update_dns_entry(
     )?)
 }
 
+pub fn delete_dns_entry(
+    api: &Cloudflare,
+    zone: &str,
+    id: &str
+) -> Result<serde_json::Value, Error> {
+    Ok(api.make_delete_req(
+        &format!("zones/{}/dns_records/{}", zone, id),
+        serde_json::value::Value::Null,
+    )?)
+}
+
 pub fn list_records<'a, Q: Into<&'a ListQueryParams<'a>>>(
     api: &Cloudflare,
     zone: &str,
