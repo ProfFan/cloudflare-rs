@@ -297,7 +297,7 @@ pub fn delete_dns_entry(
 ) -> Result<serde_json::Value, Error> {
     Ok(api.make_delete_req(
         &format!("zones/{}/dns_records/{}", zone, id),
-        serde_json::value::Value::Null,
+        json!("{}"),
     )?)
 }
 
